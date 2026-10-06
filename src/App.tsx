@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { useOfflineReady, useRoute, useTheme } from './hooks.ts';
+import { useRoute, useTheme } from './hooks.ts';
 import { Link } from './components/Link.tsx';
 import { DownloadAppButton } from './components/DownloadAppModal.tsx';
 import { BuyMeCoffee } from './components/BuyMeCoffee.tsx';
@@ -14,7 +14,6 @@ const Loopback = import.meta.env.DEV ? lazy(() => import('./dev/Loopback.tsx').t
 
 export function App() {
   const route = useRoute();
-  const offlineReady = useOfflineReady();
   const [theme, cycleTheme] = useTheme();
 
   return (
@@ -25,7 +24,6 @@ export function App() {
           <span className="text-xl font-extrabold tracking-tight">HOPKEY</span>
         </Link>
         <div className="flex items-center gap-1.5 sm:gap-2">
-          {offlineReady && <span className="hidden md:inline-flex rounded-full border-2 border-ok px-2.5 py-0.5 text-xs font-semibold text-ok" title="Everything is cached, so Offline QR works without a connection"><span aria-hidden>✓ </span>Offline ready</span>}
           <DownloadAppButton />
           <button type="button" className="theme-toggle btn btn-quiet btn-sm" onClick={cycleTheme} aria-label={`Theme: ${theme}. Switch theme`}>
             <span className="theme-icon" key={theme}>
