@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Vitest & Test output
+coverage/
+
+# Vite temporary cache
+.vite/

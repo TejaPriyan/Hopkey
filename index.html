@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2f4df5" />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>HOPKEY — Peer-to-Peer File &amp; Text Transfer | Secure P2P &amp; Offline QR</title>
+    <meta name="title" content="HOPKEY — Peer-to-Peer File &amp; Text Transfer | Secure P2P &amp; Offline QR" />
+    <meta name="description" content="Hop text, links, images and files directly between devices without accounts or cloud storage. Ultra-fast WebRTC peer-to-peer transfer and animated fountain-coded QR streams for air-gapped devices." />
+    <meta name="keywords" content="file transfer, p2p file sharing, peer to peer, webrtc file transfer, qr code file transfer, offline data transfer, air gapped transfer, fountain code, luby transform, direct transfer, secure sharing, no signup file share, send files offline, local network file transfer, progressive web app, hopkey, encrypted transfer" />
+    <meta name="author" content="Teja Priyan" />
+    <meta name="creator" content="Teja Priyan" />
+    <meta name="publisher" content="Teja Priyan" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="application-name" content="HOPKEY" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="google2af4e1ed3191321d.html" />
+    <meta name="google-site-verification" content="2af4e1ed3191321d" />
+
+    <!-- Geo & Location Meta Tags -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="Worldwide" />
+    <meta name="geo.position" content="37.7749;-122.4194" />
+    <meta name="ICBM" content="37.7749, -122.4194" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/TejaPriyan/Hopkey" />
+    <meta property="og:site_name" content="HOPKEY" />
+    <meta property="og:title" content="HOPKEY — Fast, Secure Peer-to-Peer File &amp; Text Transfer" />
+    <meta property="og:description" content="Direct device-to-device file transfer with zero cloud servers. Send files of any size via WebRTC or stream data through animated QR fountain codes." />
+    <meta property="og:image" content="/icons/icon-512.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://github.com/TejaPriyan/Hopkey" />
+    <meta name="twitter:title" content="HOPKEY — Fast, Secure Peer-to-Peer File &amp; Text Transfer" />
+    <meta name="twitter:description" content="Direct device-to-device file transfer with zero cloud servers. Send files of any size via WebRTC or stream data through animated QR fountain codes." />
+    <meta name="twitter:image" content="/icons/icon-512.png" />
+    <meta name="twitter:creator" content="@TejaPriyan" />
+
+    <!-- Apple & Mobile Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="HOPKEY" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- Icons & Manifest -->
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/icons/icon-192.png" type="image/png" />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://github.com/TejaPriyan/Hopkey" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "HOPKEY",
+        "url": "https://github.com/TejaPriyan/Hopkey",
+        "description": "Hop text, links, images and files between devices. WebRTC peer-to-peer and animated fountain-coded QR streams with zero server storage.",
+        "applicationCategory": "UtilitiesApplication, CommunicationApplication",
+        "operatingSystem": "All (Web, iOS, Android, Windows, macOS, Linux)",
+        "browserRequirements": "Requires WebRTC and modern Web standards support",
+        "softwareVersion": "1.0.0",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Teja Priyan",
+          "url": "https://github.com/TejaPriyan"
+        },
+        "featureList": [
+          "Peer-to-Peer direct file and text transfer via WebRTC",
+          "Animated fountain-coded QR stream for air-gapped / offline transfers",
+          "Zero accounts and zero cloud server storage",
+          "End-to-end encrypted transfer with SHA-256 integrity verification",
+          "Progressive Web App with offline caching"
+        ]
+      }
+    </script>
+
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('hk-theme');
+          var dark = t === 'dark' || ((!t || t === 'system') && matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
