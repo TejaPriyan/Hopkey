@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // Set VITE_BASE=/repo-name/ when deploying under a sub-path (e.g. GitHub Pages project sites).
-const base = process.env.VITE_BASE ?? '/';
+const base = process.env.VITE_BASE ?? (process.env.NODE_ENV === 'production' ? '/Hopkey/' : '/');
 
 export default defineConfig({
   base,

@@ -9,9 +9,20 @@ const BASE: string = ((import.meta as unknown as { env?: { BASE_URL?: string } }
 export function parseRoute(pathname: string, hash: string): Route {
   const h = /^#\/(r|q)\/([^/?#]+)$/.exec(hash);
   if (h) return h[1] === 'r' ? { name: 'join', code: decodeURIComponent(h[2]!) } : { name: 'instant', payload: h[2]! };
-  let p = pathname.startsWith(BASE) ? pathname.slice(BASE.length - 1) : pathname;
+  const hashNav = /^#\/(send|receive|dev\/loopback)$/.exec(hash);
+  if (hashNav) {
+    if (hashNav[1] === 'send') return { name: 'send' };
+    if (hashNav[1] === 'receive') return { name: 'receive' };
+    if (hashNav[1] === 'dev/loopback') return { name: 'loopback' };
+  }
+  let p = pathname;
+  if (BASE !== '/' && p.toLowerCase().startsWith(BASE.toLowerCase())) {
+    p = p.slice(BASE.length - 1);
+  } else if (p.toLowerCase().startsWith('/hopkey')) {
+    p = p.slice('/hopkey'.length) || '/';
+  }
   p = p.replace(/\/+$/, '') || '/';
-  if (p === '/') return { name: 'home' };
+  if (p === '/' || p === '') return { name: 'home' };
   if (p === '/send') return { name: 'send' };
   if (p === '/receive') return { name: 'receive' };
   if (p === '/dev/loopback') return { name: 'loopback' };
