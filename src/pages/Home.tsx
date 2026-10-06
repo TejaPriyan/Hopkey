@@ -1,4 +1,5 @@
 import { Link } from '../components/Link.tsx';
+import { DownloadAppButton } from '../components/DownloadAppModal.tsx';
 
 export function Home() {
   return (
@@ -19,6 +20,20 @@ export function Home() {
           <div className="stub pt-3 font-semibold">Get something →</div>
         </Link>
       </div>
+
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-3xl border-2 border-line bg-surface p-4 sm:p-5">
+        <div className="min-w-0 max-w-sm">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-ink">Install HOPKEY on your device</span>
+            <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[11px] font-semibold text-brand">PWA</span>
+          </div>
+          <p className="mt-1 text-xs text-muted">
+            Launch instantly from your phone or desktop. Works offline in airplane mode with 1-tap access.
+          </p>
+        </div>
+        <DownloadAppButton variant="hero" className="w-full sm:w-auto" />
+      </div>
+
       <ul className="m-0 grid list-none gap-2 p-0 text-sm text-muted">
         <li><strong className="text-ink">Online code:</strong> devices connect directly over WebRTC, so files do not pass through a server.</li>
         <li><strong className="text-ink">Offline QR:</strong> works in airplane mode once this app has loaded. Best for small things.</li>
@@ -26,3 +41,4 @@ export function Home() {
     </div>
   );
 }
+

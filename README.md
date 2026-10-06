@@ -2,6 +2,10 @@
 
 > Hop text, links, images and files directly between devices. **No accounts, no API keys, nothing stored on a server.**
 
+**Live Web App:** [https://hopkey.vercel.app/](https://hopkey.vercel.app/)  
+**GitHub Pages Mirror:** [https://tejapriyan.github.io/Hopkey/](https://tejapriyan.github.io/Hopkey/)
+
+[![Live App](https://img.shields.io/badge/Live%20App-hopkey.vercel.app-blue.svg?logo=vercel)](https://hopkey.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React 19](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)

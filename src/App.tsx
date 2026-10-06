@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { useOfflineReady, useRoute, useTheme } from './hooks.ts';
 import { Link } from './components/Link.tsx';
+import { DownloadAppButton } from './components/DownloadAppModal.tsx';
 import { Home } from './pages/Home.tsx';
 import { SendPage } from './pages/Send.tsx';
 import { ReceivePage } from './pages/Receive.tsx';
@@ -22,8 +23,9 @@ export function App() {
           <img src={`${import.meta.env.BASE_URL}icons/icon.svg`} alt="" width="32" height="32" />
           <span className="text-xl font-extrabold tracking-tight">HOPKEY</span>
         </Link>
-        <div className="flex items-center gap-2">
-          {offlineReady && <span className="rounded-full border-2 border-ok px-3 py-0.5 text-sm font-semibold text-ok" title="Everything is cached, so Offline QR works without a connection"><span aria-hidden>✓ </span>Offline ready</span>}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {offlineReady && <span className="hidden md:inline-flex rounded-full border-2 border-ok px-2.5 py-0.5 text-xs font-semibold text-ok" title="Everything is cached, so Offline QR works without a connection"><span aria-hidden>✓ </span>Offline ready</span>}
+          <DownloadAppButton />
           <button type="button" className="theme-toggle btn btn-quiet btn-sm" onClick={cycleTheme} aria-label={`Theme: ${theme}. Switch theme`}>
             <span className="theme-icon" key={theme}>
               {theme === 'light' ? (
@@ -47,7 +49,28 @@ export function App() {
         {route.name === 'loopback' && (Loopback ? <Suspense fallback={<p>Loading…</p>}><Loopback /></Suspense> : <Notice tone="info">The loopback page is only available in dev builds.</Notice>)}
         {route.name === 'notfound' && <div className="grid gap-3"><h1 className="text-4xl">Page not found</h1><Link to="/" className="btn justify-self-start no-underline">Go home</Link></div>}
       </main>
-      <footer className="mt-10 text-sm text-muted">No accounts. No uploads to a server. Online code needs internet; Offline QR does not.</footer>
+
+      <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-line/60 pt-4 text-xs text-muted">
+        <div>No accounts. No uploads to a server. Online code needs internet; Offline QR does not.</div>
+        <div className="text-[11px] opacity-75">
+          By <a href="https://github.com/TejaPriyan" target="_blank" rel="noopener noreferrer" className="font-semibold text-ink hover:underline">Teja Priyan</a>
+        </div>
+      </footer>
+
+      {/* Very tiny bottom corner badge */}
+      <div className="fixed bottom-2 right-3 z-30 pointer-events-auto select-none print:hidden">
+        <a
+          href="https://github.com/TejaPriyan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 rounded-full border border-line bg-surface/85 px-2 py-0.5 text-[10px] font-medium tracking-tight text-muted shadow-xs backdrop-blur-xs transition hover:text-ink hover:opacity-100 no-underline"
+          title="HOPKEY developed by Teja Priyan"
+        >
+          <span className="opacity-60">By</span>
+          <span className="font-semibold text-ink">Teja Priyan</span>
+        </a>
+      </div>
     </div>
   );
 }
+

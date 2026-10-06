@@ -3,8 +3,9 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// Set VITE_BASE=/repo-name/ when deploying under a sub-path (e.g. GitHub Pages project sites).
-const base = process.env.VITE_BASE ?? (process.env.NODE_ENV === 'production' ? '/Hopkey/' : '/');
+// Vercel / Netlify / custom domain host at root '/'. GitHub Actions Pages uses '/Hopkey/'.
+const isGitHubPages = Boolean(process.env.GITHUB_ACTIONS && !process.env.VERCEL);
+const base = process.env.VITE_BASE ?? (isGitHubPages ? '/Hopkey/' : '/');
 
 export default defineConfig({
   base,

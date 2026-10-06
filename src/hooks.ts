@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import { parseRoute } from './lib/router.ts';
 import type { Route } from './lib/router.ts';
 import { acquireWakeLock } from './lib/wakelock.ts';
-import { getOfflineReady, subscribeOffline } from './pwa.ts';
+import { getOfflineReady, subscribeOffline, subscribeInstall, canNativeInstall, isStandaloneApp } from './pwa.ts';
 
 function subscribeNav(cb: () => void): () => void {
   window.addEventListener('popstate', cb); window.addEventListener('hashchange', cb); window.addEventListener('hk-nav', cb);
@@ -20,6 +20,11 @@ export function useOnline(): boolean {
   );
 }
 export const useOfflineReady = (): boolean => useSyncExternalStore(subscribeOffline, getOfflineReady);
+export function usePwaInstall(): { canInstall: boolean; isInstalled: boolean } {
+  const canInstall = useSyncExternalStore(subscribeInstall, canNativeInstall);
+  const isInstalled = useSyncExternalStore(subscribeInstall, isStandaloneApp);
+  return { canInstall, isInstalled };
+}
 
 export type ThemeMode = 'system' | 'light' | 'dark';
 export function useTheme(): [ThemeMode, () => void] {
