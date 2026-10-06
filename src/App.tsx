@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { useOfflineReady, useRoute, useTheme } from './hooks.ts';
 import { Link } from './components/Link.tsx';
 import { DownloadAppButton } from './components/DownloadAppModal.tsx';
+import { BuyMeCoffee } from './components/BuyMeCoffee.tsx';
 import { Home } from './pages/Home.tsx';
 import { SendPage } from './pages/Send.tsx';
 import { ReceivePage } from './pages/Receive.tsx';
@@ -50,27 +51,26 @@ export function App() {
         {route.name === 'notfound' && <div className="grid gap-3"><h1 className="text-4xl">Page not found</h1><Link to="/" className="btn justify-self-start no-underline">Go home</Link></div>}
       </main>
 
-      <footer className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-line/60 pt-4 text-xs text-muted">
+      <BuyMeCoffee />
+
+      <footer className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-line/60 pt-4 text-xs text-muted">
         <div>No accounts. No uploads to a server. Online code needs internet; Offline QR does not.</div>
         <div className="text-[11px] opacity-75">
-          By <a href="https://github.com/TejaPriyan" target="_blank" rel="noopener noreferrer" className="font-semibold text-ink hover:underline">Teja Priyan</a>
+          By <span className="font-semibold text-ink">Teja Priyan</span>
         </div>
       </footer>
 
-      {/* Very tiny bottom corner badge */}
-      <div className="fixed bottom-2 right-3 z-30 pointer-events-auto select-none print:hidden">
-        <a
-          href="https://github.com/TejaPriyan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 rounded-full border border-line bg-surface/85 px-2 py-0.5 text-[10px] font-medium tracking-tight text-muted shadow-xs backdrop-blur-xs transition hover:text-ink hover:opacity-100 no-underline"
-          title="HOPKEY developed by Teja Priyan"
+      {/* Very tiny bottom corner badge (plain text, no link) */}
+      <div className="fixed bottom-2 right-3 z-30 pointer-events-none select-none print:hidden">
+        <div
+          className="inline-flex items-center gap-1 rounded-full border border-line bg-surface/85 px-2 py-0.5 text-[10px] font-medium tracking-tight text-muted shadow-xs backdrop-blur-xs"
         >
           <span className="opacity-60">By</span>
           <span className="font-semibold text-ink">Teja Priyan</span>
-        </a>
+        </div>
       </div>
     </div>
   );
 }
+
 
