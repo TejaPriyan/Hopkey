@@ -24,7 +24,7 @@
 
 | Mode | Transport | Network Requirement | Ideal For |
 |---|---|---|---|
-| **A. Online Code** | Direct WebRTC DataChannel (PeerJS) | Internet required only for initial peer signaling | Files of any size, multi-file folders, images, archives |
+| **A. Online Code** | Direct WebRTC DataChannel (PeerJS) | Internet required only for initial peer signaling | Transfers up to 2 GiB total (current limit), multi-file folders, images, archives |
 | **B. Offline QR** | Animated fountain-coded (LT) QR stream | Completely offline / Air-gapped (after initial app load) | Notes, URLs, passwords, small images, air-gapped devices |
 | **C. Instant QR** | Single static QR with URL fragment payload | Fully local decoding | Text snippets and links under 1 KB |
 
