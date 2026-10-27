@@ -34,6 +34,7 @@ export default defineConfig({
         // Precache everything the app needs so Mode B works in airplane mode after the first load.
         globPatterns: ['**/*.{js,css,html,svg,png,woff2,webmanifest}'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/\/(?:about|contact|privacy|terms)\.html$/, /\/guides\//],
         cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
       },

@@ -49,6 +49,7 @@ export function App() {
         {route.name === 'notfound' && <div className="grid gap-3"><h1 className="text-4xl">Page not found</h1><Link to="/" className="btn justify-self-start no-underline">Go home</Link></div>}
       </main>
 
+      <nav aria-label="Site information" className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted">{[["guides/index.html","Guides"],["about.html","About"],["contact.html","Contact"],["privacy.html","Privacy"],["terms.html","Terms"]].map(([path,label]) => <a key={path} href={`${import.meta.env.BASE_URL}${path}`} className="underline underline-offset-4">{label}</a>)}</nav>
       <BuyMeCoffee />
 
       <footer className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-line/60 pt-4 text-xs text-muted">
