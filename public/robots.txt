@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /dev/
 
 Sitemap: https://hopkey.vercel.app/sitemap.xml
-Sitemap: https://tejapriyan.github.io/Hopkey/sitemap.xml
