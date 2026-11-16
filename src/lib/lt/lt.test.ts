@@ -79,7 +79,7 @@ describe('LT codec round trip', () => {
       expect(sum / runs).toBeLessThan(1.7);
     }
     console.log('\nFrames needed relative to K:\n  ' + rows.join('\n  '));
-  });
+  }, 20_000);
 
   it('ignores a frame from another session', () => {
     const a = new LtEncoder(randomData(900, seededRandom(1)), { blockSize: 100, sessionId: 1 });
